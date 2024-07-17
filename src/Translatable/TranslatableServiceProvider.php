@@ -29,9 +29,11 @@ class TranslatableServiceProvider extends ServiceProvider
         );
 
         Rule::macro('translatableUnique', function (string $model, string $field): TranslatableUnique {
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> $model */
             return new TranslatableUnique($model, $field);
         });
         Rule::macro('translatableExists', function (string $model, string $field): TranslatableExists {
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> $model */
             return new TranslatableExists($model, $field);
         });
 

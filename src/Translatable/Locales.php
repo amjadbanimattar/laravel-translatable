@@ -75,6 +75,11 @@ class Locales implements Arrayable, ArrayAccess
         return explode($this->getLocaleSeparator(), $locale)[0];
     }
 
+    /**
+     * Retrieves the locale separator string from the configuration.
+     *
+     * @return non-empty-string The locale separator string obtained from the configuration, or '-' if not configured.
+     */
     public function getLocaleSeparator(): string
     {
         return $this->config->get('translatable.locale_separator') ?: '-';
